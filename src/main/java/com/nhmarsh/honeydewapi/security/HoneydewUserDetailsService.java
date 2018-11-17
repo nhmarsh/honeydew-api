@@ -1,6 +1,7 @@
 package com.nhmarsh.honeydewapi.security;
 
 import com.nhmarsh.honeydewapi.entity.Role;
+import com.nhmarsh.honeydewapi.entity.Task;
 import com.nhmarsh.honeydewapi.entity.User;
 import com.nhmarsh.honeydewapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Transactional
 public class HoneydewUserDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
@@ -37,6 +40,7 @@ public class HoneydewUserDetailsService implements UserDetailsService {
 
 
         List<Role> userRoles = user.getRoles();
+        List<Task> userTasks = user.getTasks();
         List<GrantedAuthority> authorities = new ArrayList<>();
         if(userRoles != null) {
             for(Role role : userRoles) {
