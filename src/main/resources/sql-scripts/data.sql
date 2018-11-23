@@ -6,11 +6,13 @@ INSERT INTO app_role (id, role_name, description) VALUES (2, 'ADMIN_USER', 'Admi
 -- Encrypted using strength 8 bcrypt encoding https://www.dailycred.com/article/bcrypt-calculator
 INSERT INTO app_user (id, first_name, last_name, password, username) VALUES (1, 'John', 'Doe', '$2a$08$8wr/tb900VFNYBdodefGluO3pQ5gv5jFG6Q/gepAUD3hiHvsf2wke', 'john.doe');
 INSERT INTO app_user (id, first_name, last_name, password, username) VALUES (2, 'Admin', 'Admin', '$2a$08$8wr/tb900VFNYBdodefGluO3pQ5gv5jFG6Q/gepAUD3hiHvsf2wke', 'admin.admin');
+INSERT INTO app_user (id, first_name, last_name, password, username) VALUES (3, 'Test', 'Test', '$2a$08$8wr/tb900VFNYBdodefGluO3pQ5gv5jFG6Q/gepAUD3hiHvsf2wke', 'test.test');
 
 
 INSERT INTO user_role(user_id, role_id) VALUES(1,1);
 INSERT INTO user_role(user_id, role_id) VALUES(2,1);
 INSERT INTO user_role(user_id, role_id) VALUES(2,2);
+INSERT INTO user_role(user_id, role_id) VALUES(3,1);
 
 
 --TASK

@@ -60,6 +60,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .secret(clientSecret)
                 .authorizedGrantTypes(grantType)
                 .scopes(scopeRead, scopeWrite)
+//                .accessTokenValiditySeconds(10) For testing refresht oken
                 .resourceIds(resourceIds);
     }
 
